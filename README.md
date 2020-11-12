@@ -10,6 +10,9 @@ You can suggest ideas submiting an Issues
 - [Supply curve](#supply)
 - [Demand curve](#demand)
 - [Supply and demand](#supply-and-demand)
+- [Indifference curves](#indifference-curves)
+- [Production–possibility frontier](#production–possibility-frontier)
+- [Laffer curve](#laffer-curve)
 
 ## Installation
 Not possible yet
@@ -86,7 +89,6 @@ indifference(ncurves = 2,
  <img src="https://user-images.githubusercontent.com/67192157/98984125-0f418500-2522-11eb-9b44-d8639c601677.png">
 </p>
 
-
 ```r
 p <- indifference(ncurves = 2, x = c(2, 4), main = "indifference curves", xlab = "Good X", ylab = "Good Y")
 
@@ -100,8 +102,8 @@ p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dot
 
 ppf(x = 1:6, main = "PPF",  geom = "text", generic = T, xlab = "X", ylab = "Y", labels = 1:6, acol = 3)$p
 
-## Production–possibility frontier
 
+## Production–possibility frontier
 
 ```r
 ppf(x = 1:6, main = "PPF",  geom = "text", generic = T, xlab = "X", ylab = "Y", labels = 1:6, acol = 3)$p
