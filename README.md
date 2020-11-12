@@ -106,6 +106,23 @@ p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dot
 </p>
 
 
+```r
+indifference(ncurves = 2,
+             type = "pcom",
+             main = "Indifference curves",
+             sub = "Perfect complements",
+             xlab = "Good X",
+             ylab = "Good Y",
+             bg.col = "#fff3cd",
+             linecol = 1, 
+             pointcol = 2)
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/98987210-3f8b2280-2526-11eb-8a79-804b9044909c.png">
+</p>
+
+
 ## Production–possibility frontier
 
 ```r
