@@ -40,6 +40,7 @@ demand(ncurves = 2)
 ## Supply and demand
 
 ```r
+# Custom data
 supply1 <- data.frame(x = c(1, 9), y = c(1, 9))
 supply1
 
@@ -100,7 +101,9 @@ p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dot
   geom_point(data = int, size = 3)
 ```
 
-ppf(x = 1:6, main = "PPF",  geom = "text", generic = T, xlab = "X", ylab = "Y", labels = 1:6, acol = 3)$p
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/98986762-9d6b3a80-2525-11eb-8734-086d15e8dadd.png">
+</p>
 
 
 ## Production–possibility frontier
