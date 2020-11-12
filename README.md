@@ -3,7 +3,7 @@ Microeconomic graphs made with ggplot2
 
 THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS.
 
-You can suggest ideas submiting an Issues
+You can suggest ideas submiting an Issue
 
 ## Index
 - [Installation](#installation)
