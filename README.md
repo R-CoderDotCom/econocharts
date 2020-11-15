@@ -1,9 +1,9 @@
 # econocharts
 Microeconomic graphs made with ggplot2
 
-THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS.
+This package allows creating microeconomic charts in R with simple functions. This package inspiration is [reconPlots](https://github.com/andrewheiss/reconPlots) by Andrew Weiss.
 
-You can suggest ideas submiting an Issue
+THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas submiting an Issue
 
 ## Index
 - [Installation](#installation)
@@ -20,24 +20,74 @@ Not possible yet
 ## Supply
 
 ```r
-supply(ncurves = 2)
+supply()
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98985645-1e293700-2524-11eb-8fb2-c6383536ffa3.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189128-fa523500-275f-11eb-9dbf-44cab8f0b5e3.png">
+</p>
+
+
+```r
+supply(ncurves = 1,
+      type = "line",
+      x = c(2, 4, 5),
+      linecol = 2, 
+      geom = "label",
+      geomfill = "pink",
+      main = "Supply curve")
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/99189293-cd525200-2760-11eb-8fb4-07a274c05473.png">
+</p>
+
+```r
+supply(ncurves = 3,
+       xlab = "X",
+       ylab = "Y",
+       bg.col = "lightblue")
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/99189367-24582700-2761-11eb-90e1-0024d611180c.png">
 </p>
 
 
 ## Demand
 
 ```r
-demand(ncurves = 2)
+demand(x = 3:6, generic = FALSE)
 ```
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98985736-47e25e00-2524-11eb-8326-b915241e127d.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189443-74cf8480-2761-11eb-9e41-f37fd0d19413.png">
 </p>
 
+
+```r
+demand(main = "Demand", 
+       sub = "curve",
+       xlab = "X",
+       ylab = "Y",
+       names = "D[1]",
+       geomcol = 2)
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/99189716-c9bfca80-2762-11eb-94b1-e89ddddb5df7.png">
+</p>
+
+
 ## Supply and demand
+
+```r
+sdcurve()
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/99189746-fd025980-2762-11eb-831f-65c68e895882.png">
+</p>
+
 
 ```r
 # Custom data
@@ -53,13 +103,18 @@ supply2
 demand2 <- data.frame(x = c(8, 2), y = c(2, 8))
 demand2
 
-p <- sdplot(supply1, demand1, supply2, demand2, equilibrium = TRUE,  bg.col = "#fff3cd")
-p +  annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,
-              arrow = arrow(length = unit(1, "lines")), colour = "grey50")
+p <- sdcurve(supply1,
+             demand1,
+             supply2, 
+             demand2,
+             equilibrium = TRUE,
+             bg.col = "#fff3cd")
+p + annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,
+             arrow = arrow(length = unit(0.3, "lines")), colour = "grey50")
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98985920-824bfb00-2524-11eb-8a0c-f3ccdf0210f9.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189792-536f9800-2763-11eb-8848-0149b743e209.png">
 </p>
 
 
@@ -70,7 +125,7 @@ indifference()
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98983912-c2f64500-2521-11eb-8888-b5d740f6b55e.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189813-769a4780-2763-11eb-95f3-a5f8cb7976a1.png">
 </p>
 
 ```r
@@ -87,22 +142,22 @@ indifference(ncurves = 2,
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98984125-0f418500-2522-11eb-9b44-d8639c601677.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189829-96317000-2763-11eb-88a6-d2a61c80a1c0.png">
 </p>
 
+
 ```r
-p <- indifference(ncurves = 2, x = c(2, 4), main = "indifference curves", xlab = "Good X", ylab = "Good Y")
+p <- indifference(ncurves = 2, x = c(2, 4), main = "Indifference curves", xlab = "Good X", ylab = "Good Y")
 
 int <- bind_rows(curve_intersect(data.frame(x = 1:1000, y = rep(3, nrow(p$curve))), p$curve + 1))
 
 p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dotted")  +
-  geom_segment(data = int,
-               aes(x = x, y = 0, xend = x, yend = y), lty = "dotted") +
-  geom_point(data = int, size = 3)
+      geom_segment(data = int, aes(x = x, y = 0, xend = x, yend = y), lty = "dotted") +
+      geom_point(data = int, size = 3)
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98986762-9d6b3a80-2525-11eb-8734-086d15e8dadd.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189873-c547e180-2763-11eb-8b6a-7b43af760468.png">
 </p>
 
 
@@ -119,9 +174,25 @@ indifference(ncurves = 2,
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98987210-3f8b2280-2526-11eb-8a79-804b9044909c.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189904-e4df0a00-2763-11eb-90a5-41898cc33f9f.png">
 </p>
 
+
+```r
+indifference(ncurves = 5,
+             type = "psubs",
+             main = "Indifference curves",
+             sub = "Perfect substitutes",
+             xlab = "Good X",
+             ylab = "Good Y",
+             bg.col = "#fff3cd",
+             linecol = 1)
+```
+
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/99189953-2b346900-2764-11eb-9539-a0e5c53bde5d.png">
+</p>
 
 ## Production–possibility frontier
 
@@ -130,7 +201,7 @@ ppf(x = 1:6, main = "PPF",  geom = "text", generic = T, xlab = "X", ylab = "Y", 
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98984970-2f257880-2523-11eb-92f6-9d2e684b0a17.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99189976-4f904580-2764-11eb-8c02-8b6486c87e2d.png">
 </p>
 
 ```r
@@ -139,14 +210,14 @@ p <- ppf(x = 4:6, main = "PPF", geom = "text", generic = T, labels = c("A", "B",
 p$p + geom_point(data = data.frame(x = 5, y = 5), size = 3) +
   geom_point(data = data.frame(x = 2, y = 2), size = 3) +
   annotate("segment", x = 3.1, xend = 4.25, y = 5, yend = 5,
-           arrow = arrow(length = unit(1, "lines")), colour = 3, lwd = 1) +
+           arrow = arrow(length = unit(0.5, "lines")), colour = 3, lwd = 1) +
   annotate("segment", x = 4.25, xend = 4.25, y = 5, yend = 4,
-           arrow = arrow(length = unit(1, "lines")), colour = 3, lwd = 1)
+           arrow = arrow(length = unit(0.5, "lines")), colour = 3, lwd = 1)
 ```
 
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98986238-ee2e6380-2524-11eb-9b52-c4e119491e5d.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99190004-751d4f00-2764-11eb-85f1-d198e97bcdb0.png">
 </p>
 
 
@@ -156,5 +227,14 @@ laffer(ylab = "T", xlab = "t", acol = "lightblue", pointcol = 4)
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/98985326-aeb34780-2523-11eb-9708-61a6694e6d03.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99190031-8fefc380-2764-11eb-83f5-629596437ef7.png">
+</p>
+
+
+```r
+laffer(xmax = 20, t = c(3, 6, 9), generic = FALSE, ylab = "T", xlab = "t", acol = "lightblue", pointcol = 4, alpha = 0.6)
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/99190101-f379f100-2764-11eb-9c17-1673f2d93543.png">
 </p>
