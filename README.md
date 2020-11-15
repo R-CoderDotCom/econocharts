@@ -11,7 +11,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Demand curve](#demand)
 - [Supply and demand](#supply-and-demand)
 - [Indifference curves](#indifference-curves)
-- [Production–possibility frontier](#production–possibility-frontier)
+- [Production–possibility frontier](#productionpossibility-frontier)
 - [Laffer curve](#laffer-curve)
 
 ## Installation
