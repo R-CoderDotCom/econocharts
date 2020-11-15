@@ -20,7 +20,7 @@ Not possible yet
 ## Supply
 
 ```r
-supply()
+supply() # Default plot
 ```
 
 <p align="center">
@@ -29,13 +29,13 @@ supply()
 
 
 ```r
-supply(ncurves = 1,
-      type = "line",
-      x = c(2, 4, 5),
-      linecol = 2, 
-      geom = "label",
-      geomfill = "pink",
-      main = "Supply curve")
+supply(ncurves = 1,          # Number of supply curves to be plotted
+      type = "line",         # Type of the curve
+      x = c(2, 4, 5),        # Y-axis values where to create intersections
+      linecol = 2,           # Color of the curves
+      geom = "label",        # Label type of the intersection points
+      geomfill = "pink",     # If geom = "label", is the background color of the label
+      main = "Supply curve") # Title of the plot
 ```
 
 <p align="center">
@@ -43,10 +43,10 @@ supply(ncurves = 1,
 </p>
 
 ```r
-supply(ncurves = 3,
-       xlab = "X",
-       ylab = "Y",
-       bg.col = "lightblue")
+supply(ncurves = 3, # Three supply curves
+       xlab = "X",  # X-axis label
+       ylab = "Y",  # Y-axis label
+       bg.col = "lightblue") # Background color
 ```
 
 <p align="center">
@@ -57,7 +57,8 @@ supply(ncurves = 3,
 ## Demand
 
 ```r
-demand(x = 3:6, generic = FALSE)
+demand(x = 3:6,  # Intersections
+      generic = FALSE) # Axis values with the actual numbers
 ```
 <p align="center">
  <img src="https://user-images.githubusercontent.com/67192157/99189443-74cf8480-2761-11eb-9e41-f37fd0d19413.png">
@@ -65,12 +66,12 @@ demand(x = 3:6, generic = FALSE)
 
 
 ```r
-demand(main = "Demand", 
-       sub = "curve",
-       xlab = "X",
-       ylab = "Y",
-       names = "D[1]",
-       geomcol = 2)
+demand(main = "Demand", # Title
+       sub = "curve",   # Subtitle
+       xlab = "X",      # X-axis label
+       ylab = "Y",      # Y-axis label
+       names = "D[1]",  # Custom name for the curve
+       geomcol = 2)     # Color of the custom name of the curve
 ```
 
 <p align="center">
@@ -81,7 +82,7 @@ demand(main = "Demand",
 ## Supply and demand
 
 ```r
-sdcurve()
+sdcurve() # Default supply and demand plot
 ```
 
 <p align="center">
@@ -103,13 +104,13 @@ supply2
 demand2 <- data.frame(x = c(8, 2), y = c(2, 8))
 demand2
 
-p <- sdcurve(supply1,
+p <- sdcurve(supply1,   # Custom data
              demand1,
              supply2, 
              demand2,
-             equilibrium = TRUE,
-             bg.col = "#fff3cd")
-p + annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,
+             equilibrium = TRUE, # Calculate the equilibrium
+             bg.col = "#fff3cd") # Background color
+p + annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,                # Add more layers
              arrow = arrow(length = unit(0.3, "lines")), colour = "grey50")
 ```
 
@@ -121,7 +122,7 @@ p + annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,
 ## Indifference curves
 
 ```r
-indifference()
+indifference() # Default indifference curve
 ```
 
 <p align="center">
@@ -129,20 +130,17 @@ indifference()
 </p>
 
 ```r
-indifference(ncurves = 2,
-             type = "psubs",
-             x = c(2, 4),
+indifference(ncurves = 2,  # Two curves
+             x = c(2, 4),  # Intersections
              main = "Indifference curves",
              xlab = "Good X",
              ylab = "Good Y",
-             bg.col = "#fff3cd",
-             linecol = 1, 
-             pointcol = 2)
-
+             linecol = 2,  # Color of the curves
+             pointcol = 2) # Color of the intersection points
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/99189829-96317000-2763-11eb-88a6-d2a61c80a1c0.png">
+ <img src="https://user-images.githubusercontent.com/67192157/99190313-240e5a80-2766-11eb-863f-a205d4496f50.png">
 </p>
 
 
@@ -162,15 +160,15 @@ p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dot
 
 
 ```r
-indifference(ncurves = 2,
-             type = "pcom",
+indifference(ncurves = 2,    # Two curves
+             type = "pcom",  # Perfect complements
              main = "Indifference curves",
              sub = "Perfect complements",
              xlab = "Good X",
              ylab = "Good Y",
-             bg.col = "#fff3cd",
-             linecol = 1, 
-             pointcol = 2)
+             bg.col = "#fff3cd", # Background color
+             linecol = 1,  # Color of the curve
+             pointcol = 2) # Color of the intersection points
 ```
 
 <p align="center">
@@ -179,14 +177,14 @@ indifference(ncurves = 2,
 
 
 ```r
-indifference(ncurves = 5,
-             type = "psubs",
+indifference(ncurves = 5,     # Five curves
+             type = "psubs",  # Perfect substitutes
              main = "Indifference curves",
              sub = "Perfect substitutes",
              xlab = "Good X",
              ylab = "Good Y",
-             bg.col = "#fff3cd",
-             linecol = 1)
+             bg.col = "#fff3cd", # Background color
+             linecol = 1) # Color of the curve
 ```
 
 
@@ -197,7 +195,14 @@ indifference(ncurves = 5,
 ## Production–possibility frontier
 
 ```r
-ppf(x = 1:6, main = "PPF",  geom = "text", generic = T, xlab = "X", ylab = "Y", labels = 1:6, acol = 3)$p
+ppf(x = 1:6, # Intersections
+   main = "PPF",
+   geom = "text",
+   generic = TRUE, # Generic axis labels
+   xlab = "X",
+   ylab = "Y",
+   labels = 1:6,
+   acol = 3)$p
 ```
 
 <p align="center">
@@ -205,7 +210,14 @@ ppf(x = 1:6, main = "PPF",  geom = "text", generic = T, xlab = "X", ylab = "Y", 
 </p>
 
 ```r
-p <- ppf(x = 4:6, main = "PPF", geom = "text", generic = T, labels = c("A", "B", "C"), xlab = "BIKES", ylab = "CARS", acol  = 3)
+p <- ppf(x = 4:6, # Intersections
+        main = "PPF",
+        geom = "text",
+        generic = TRUE, # Generic labels
+        labels = c("A", "B", "C"), # Custom labels
+        xlab = "BIKES",
+        ylab = "CARS",
+        acol = 3)      # Color of the area
 
 p$p + geom_point(data = data.frame(x = 5, y = 5), size = 3) +
   geom_point(data = data.frame(x = 2, y = 2), size = 3) +
@@ -223,7 +235,9 @@ p$p + geom_point(data = data.frame(x = 5, y = 5), size = 3) +
 
 ## Laffer curve
 ```r
-laffer(ylab = "T", xlab = "t", acol = "lightblue", pointcol = 4)
+laffer(ylab = "T", xlab = "t",
+       acol = "lightblue", # Color of the area
+       pointcol = 4)       # Color of the maximum point
 ```
 
 <p align="center">
@@ -232,7 +246,15 @@ laffer(ylab = "T", xlab = "t", acol = "lightblue", pointcol = 4)
 
 
 ```r
-laffer(xmax = 20, t = c(3, 6, 9), generic = FALSE, ylab = "T", xlab = "t", acol = "lightblue", pointcol = 4, alpha = 0.6)
+laffer(xmax = 20, # Modify the curve
+       t = c(3, 6, 9), # Intersections
+       generic = FALSE,
+       ylab = "T",
+       xlab = "t",
+       acol = "lightblue", # Color of the area
+       alpha = 0.6,        # Transparency of the area
+       pointcol = 4)       # Color of the maximum point
+
 ```
 
 <p align="center">
