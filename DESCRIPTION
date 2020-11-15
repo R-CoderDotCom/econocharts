@@ -1,0 +1,15 @@
+Package: econocharts
+Title: Microeconomic Charts Made with 'ggplot2'
+Version: 1.0
+Authors@R: c(
+  person("José Carlos", "Soage González", email = "jsoage@uvigo.es", role = c("aut", "cre")),
+   person("Andrew", "Heiss", email = "andrewheiss@gmail.com", role = "aut")
+  )
+Description: What the package does (one paragraph).
+Imports: ggplot2, dplyr, Hmisc
+License: MIT + file LICENSE
+Encoding: UTF-8
+URL: https://r-coder.com/
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
