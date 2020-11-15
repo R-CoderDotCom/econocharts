@@ -23,6 +23,9 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 devtools::install_github("R-CoderDotCom/econocharts")
 ```
 
+### CRAN
+The package will be on CRAN as soon as possible
+
 ## Supply
 
 ```r
