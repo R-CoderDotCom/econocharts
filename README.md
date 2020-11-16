@@ -5,6 +5,14 @@ This package allows creating microeconomic charts in R with simple functions. Th
 
 THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas submiting an Issue
 
+## TODO
+- [ ] Finish documentatation
+- [ ] Add graph for budget constraints
+- [ ] Fix `linecol` argument
+- [ ] Tax graph
+- [ ] Shade producer and consumer surplus
+
+
 ## Index
 - [Installation](#installation)
 - [Supply curve](#supply)
