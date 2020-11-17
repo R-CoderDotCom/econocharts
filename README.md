@@ -11,6 +11,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [ ] Fix `linecol` argument
 - [ ] Tax graph
 - [ ] Shade producer and consumer surplus
+- [ ] Add Edgeworth box
 
 
 ## Index
