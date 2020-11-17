@@ -7,6 +7,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 
 ## TODO
 - [ ] Finish documentation
+- [ ] Allow drawing custom functions
 - [ ] Add graph for budget constraints
 - [ ] Fix `linecol` argument
 - [ ] Tax graph
