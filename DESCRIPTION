@@ -1,11 +1,10 @@
 Package: econocharts
-Title: Microeconomic Charts Made with 'ggplot2'
+Title: Microeconomics and Macroeconomics Charts Made with 'ggplot2'
 Version: 1.0
 Authors@R: c(
   person("José Carlos", "Soage González", email = "jsoage@uvigo.es", role = c("aut", "cre")),
-   person("Andrew", "Heiss", email = "andrewheiss@gmail.com", role = "aut")
-  )
-Description: What the package does (one paragraph).
+   person("Andrew", "Heiss", email = "andrewheiss@gmail.com", role = "aut"))
+Description: Contains several functions for creating fully-customizable microeconomics or macroeconomics charts, such as supply and demand curves, indifference curves, production-possibility frontiers or Laffer curves.
 Imports: ggplot2, dplyr, Hmisc
 License: MIT + file LICENSE
 Encoding: UTF-8

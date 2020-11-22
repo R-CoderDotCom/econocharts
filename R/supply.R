@@ -1,6 +1,6 @@
 #' @title Supply curves
 #'
-#' @description TODO
+#' @description Create supply curves. The function allows specifying the number of curves to generate or use custom curves, the type of curve (convex or linear), create intersection points along the Y-axis and customize other arguments related to the style of the final output.
 #'
 #' @param ... Specify the supply curve or curves separated by comma (as `data.frame`) you want to display in the graph. This will override the sample curve.
 #' @param ncurves Number of supply curves to be generated based on the sample data.
@@ -22,10 +22,14 @@
 #' @param ylab Name of the Y-axis.
 #' @param bg.col Background color of the plot.
 #' @import ggplot2 dplyr
+#'
+#'
+#'
+#'
+#'
 #' @export
 supply <- function(...,
                    ncurves = 1,
-                   # distance = 1,
                    xmax,
                    ymax,
                    type = "convex",
@@ -266,9 +270,9 @@ supply <- function(...,
       if(ncurve == 1 & missing(...)){
 
         p <- p + scale_x_continuous(expand = c(0, 0), limits = c(0,  max(unlist(curve)) + ncurves),
-                                    breaks = intersections$x, labels = sapply(length(x):1, function(i) as.expression(bquote(X[.(LETTERS[i])])))) +
+                                    breaks = intersections$x, labels = sapply(1:length(x), function(i) as.expression(bquote(X[.(LETTERS[i])])))) +
           scale_y_continuous(expand = c(0, 0), limits = c(0, max(unlist(curve)) + ncurves),
-                             breaks = round(intersections$y, 2), labels = sapply(length(x):1, function(i) as.expression(bquote(Y[.(LETTERS[i])]))))
+                             breaks = round(intersections$y, 2), labels = sapply(1:length(x), function(i) as.expression(bquote(Y[.(LETTERS[i])]))))
       } else {
 
         labels <- rev(sapply(length(intersections$x):1, function(i) as.expression(bquote(P[.(LETTERS[i])]))))
@@ -304,13 +308,3 @@ supply <- function(...,
     return(list(p = p, curve = curve))
   }
 }
-
-
-
-supply1 <- Hmisc::bezier(c(1, 8, 9),
-                        c(1, 5, 9)) %>% data.frame()
-
-supply2 <- Hmisc::bezier(c(2, 9, 10),
-                         c(1, 5, 9)) %>% data.frame()
-
-supply(supply1, supply2)

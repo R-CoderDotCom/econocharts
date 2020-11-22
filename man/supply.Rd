@@ -66,5 +66,5 @@ supply(
 \item{bg.col}{Background color of the plot.}
 }
 \description{
-TODO
+Create supply curves. The function allows specifying the number of curves to generate or use custom curves, the type of curve (convex or linear), create intersection points along the Y-axis and customize other arguments related to the style of the final output.
 }

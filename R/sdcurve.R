@@ -1,11 +1,16 @@
-#' @title Supply and demand chart
+#' @title Supply and demand curves
 #'
-#' @description econocharts
+#' @description Create supply and demand curves. By default, the function will use a default supply and a default demand curve, but this can be overridden passing new curves as additional arguments or modifying the `xmax` and `ymax` arguments.
+#' Moreover, the function provides several arguments to customize the final output, like displaying the equilibrium points, the name of the curves, customizing the title, subtitle or axis labels, among others.
+#'
+#'
 #'
 #' @param ... Specify the demand and supply curve or curves separated by commas (as `data.frame`) you want to display in the graph, starting with supply. This will override the sample curves.
 #' @param xmax Numeric. Allows modifying the maximum X value for the default functions.
 #' @param ymax Numeric. Allows modifying the maximum Y value for the default functions.
-#' @param generic  Boolean. If `TRUE`, the axis labels shows generic names. If `FALSE`, the axis labels are the actual data of the axis that corresponds to the intersection points between the two curves.
+#' @param max.price Price ceiling.
+#' @param min.price Price floor.
+#' @param generic Boolean. If `TRUE`, the axis labels shows generic names. If `FALSE`, the axis labels are the actual data of the axis that corresponds to the intersection points between the two curves.
 #' @param equilibrium Boolean. If `TRUE`, shows the intersection points between the two curves.
 #' @param main Main title of the plot.
 #' @param sub Subtitle of the plot.
@@ -16,11 +21,19 @@
 #' @param linescol Color of the curves. It must be a vector of the same length as the number of displayed curves.
 #' @param bg.col Background color of the plot.
 #'
+#'
+#' @examples
+#'
+#'
+#'
+#'
 #' @import ggplot2 dplyr
 #' @export
 sdcurve <- function(...,
                     xmax,
                     ymax,
+                    max.price,
+                    min.price,
                     generic = TRUE,
                     equilibrium = TRUE,
                     main = NULL,
@@ -116,6 +129,54 @@ sdcurve <- function(...,
     geom_point(data = intersections, size = 3)
   }
 
+
+  if(!missing(max.price) & !missing(min.price)) {
+    if(min.price >= max.price) {
+      stop("'max.price' must be greater than 'min.price'")
+    }
+  }
+
+  if(!missing(max.price)){
+
+
+    # Calculate the intersections of the curves and the line
+    # intersections <- tibble()
+    # j <- 2
+    #
+    # for(i in 1:ncurves) {
+    #   intersections_max <- intersections %>%
+    #     bind_rows(curve_intersect(data.frame(curves[j - 1]), data.frame(curves[j])))
+    #   j <- j + 2
+    # }
+    #
+    # print(intersections_max)
+
+    p <- p +  geom_segment(data = data.frame(x = seq(min(unlist(curves)), max(unlist(curves)), length.out = 2), y = rep(max.price, 2)),
+                           aes(x = 0, y = y, xend = x, yend = y), lty = "dotted")
+  }
+
+
+  if(!missing(min.price)){
+
+
+    # Calculate the intersections of the curves and the line
+    # intersections <- tibble()
+    # j <- 2
+    #
+    # for(i in 1:ncurves) {
+    #   intersections_max <- intersections %>%
+    #     bind_rows(curve_intersect(data.frame(curves[j - 1]), data.frame(curves[j])))
+    #   j <- j + 2
+    # }
+    #
+    # print(intersections_max)
+
+    p <- p +  geom_segment(data = data.frame(x = seq(min(unlist(curves)), max(unlist(curves)), length.out = 2), y = rep(min.price, 2)),
+                           aes(x = 0, y = y, xend = x, yend = y), lty = "dotted")
+  }
+
+
+
   # Curve labels
 
   if(curve_names == TRUE) {
@@ -186,26 +247,6 @@ sdcurve <- function(...,
 }
 
 
-# sdcurve(generic = F, xlab = "as")
-#
-# supply1 <- data.frame(x = c(1, 9), y = c(1, 9))
-# supply1
-#
-# demand1 <- data.frame(x = c(7, 2), y = c(2, 7))
-# demand1
-#
-# supply2 <- data.frame(x = c(2, 10), y = c(1, 9))
-# supply2
-#
-# demand2 <- data.frame(x = c(8, 2), y = c(2, 8))
-# demand2
-#
-#
-# p <- sdcurve(supply1, demand1, supply2, demand1, equilibrium = T,  bg.col = "#fff3cd", generic = T)
-# p +  annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,
-#               arrow = arrow(length = unit(1, "lines")), colour = "grey50")
-#
-#
-# sdcurve(supply1, demand1, supply2, demand1, labels = c("S[1]", "D[1]","S[2]", "D[1]"))
+
 
 

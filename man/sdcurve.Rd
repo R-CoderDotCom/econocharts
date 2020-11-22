@@ -2,12 +2,14 @@
 % Please edit documentation in R/sdcurve.R
 \name{sdcurve}
 \alias{sdcurve}
-\title{Supply and demand chart}
+\title{Supply and demand curves}
 \usage{
 sdcurve(
   ...,
   xmax,
   ymax,
+  max.price,
+  min.price,
   generic = TRUE,
   equilibrium = TRUE,
   main = NULL,
@@ -15,14 +17,49 @@ sdcurve(
   xlab = NULL,
   ylab = NULL,
   curve_names = TRUE,
-  labels,
-  col,
+  names,
+  linescol,
   bg.col = "white"
 )
 }
 \arguments{
-\item{bg.col}{}
+\item{...}{Specify the demand and supply curve or curves separated by commas (as \code{data.frame}) you want to display in the graph, starting with supply. This will override the sample curves.}
+
+\item{xmax}{Numeric. Allows modifying the maximum X value for the default functions.}
+
+\item{ymax}{Numeric. Allows modifying the maximum Y value for the default functions.}
+
+\item{max.price}{Price ceiling.}
+
+\item{min.price}{Price floor.}
+
+\item{generic}{Boolean. If \code{TRUE}, the axis labels shows generic names. If \code{FALSE}, the axis labels are the actual data of the axis that corresponds to the intersection points between the two curves.}
+
+\item{equilibrium}{Boolean. If \code{TRUE}, shows the intersection points between the two curves.}
+
+\item{main}{Main title of the plot.}
+
+\item{sub}{Subtitle of the plot.}
+
+\item{xlab}{Name of the X-axis.}
+
+\item{ylab}{Name of the Y-axis.}
+
+\item{curve_names}{Boolean. If \code{TRUE}, the function adds default names to each.}
+
+\item{names}{If \code{curve_names = TRUE}, are custom names for the curves.}
+
+\item{linescol}{Color of the curves. It must be a vector of the same length as the number of displayed curves.}
+
+\item{bg.col}{Background color of the plot.}
 }
 \description{
-econocharts
+Create supply and demand curves. By default, the function will use a default supply and a default demand curve, but this can be overridden passing new curves as additional arguments or modifying the \code{xmax} and \code{ymax} arguments.
+Moreover, the function provides several arguments to customize the final output, like displaying the equilibrium points, the name of the curves, customizing the title, subtitle or axis labels, among others.
+}
+\examples{
+
+
+
+
 }

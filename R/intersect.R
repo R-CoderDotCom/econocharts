@@ -1,6 +1,8 @@
 #' @title Intersection of two curves
 #'
-#' @description TODO
+#' @description Calculate where two lines or curves intersect. Curves are defined as data
+#' frames with x and y columns providing cartesian coordinates for the lines.
+#' This function works on both linear and nonlinear curves.
 #'
 #' @param curve1 Either a \code{data.frame} with columns named \code{x} and \code{y} or a function.
 #' @param curve2 Either \code{data.frame} with columns named \code{x} and \code{y} or a function.
@@ -79,9 +81,9 @@ curve_intersect <- function(curve1, curve2, empirical = TRUE, domain = NULL) {
 }
 
 
-# # APROXIMAR CUANDO LA LINEA ES VERTICAL
-#
-#
+# APROXIMAR CUANDO LA LINEA ES VERTICAL
+
+
 # linerect <- data.frame(x = c(5,5), y = c(0, 9))
 #
 # line3 <- data.frame(x = c(2, 10), y = c(1, 9))
@@ -94,15 +96,5 @@ curve_intersect <- function(curve1, curve2, empirical = TRUE, domain = NULL) {
 #
 # AF2 = approxfun(line3$x, line3$y)
 # AF2(5)
-#
-#
-# # APROXIMAR CUANDO LA LINEA ES HORIZONTAL
-#
-# linerect2 <- data.frame(x = c(0,1000), y = c(2, 2))
-# line3 <- data.frame(x = c(0, 6.5),
-#                     y = c(6.5, 0))
-#
-# plot(linerect2, type = "l")
-# lines(line3, type = "l", col = 2)
-#
-# curve_intersect(linerect2, line3)
+
+

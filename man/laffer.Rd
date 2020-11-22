@@ -51,5 +51,5 @@ laffer(
 \item{bg.col}{Background color of the plot.}
 }
 \description{
-TODO
+Creates Laffer curves. The function allows specifying a custom Laffer curve, modifying the maximum X and Y axis values, creating intersections along the values of the Y-axis and the curve and customizing the final output with other arguments.
 }

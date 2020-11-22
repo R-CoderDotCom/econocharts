@@ -63,5 +63,5 @@ ppf(
 \item{bg.col}{Background color of the plot}
 }
 \description{
-TODO
+Creates production–possibility frontiers. The function allows specifying custom frontiers, modifying the type of the curves (concave or linear), creating intersections along the values of the Y-axis and the curve and customizing the final output with further arguments.
 }

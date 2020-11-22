@@ -302,9 +302,3 @@ demand <- function(...,
     return(list(p = p, curve = curve))
   }
 }
-
-
-
-
-#
-# demand(ncurves = 2, x = 2)

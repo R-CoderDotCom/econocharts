@@ -1,6 +1,6 @@
 #' @title Laffer curve
 #'
-#' @description TODO
+#' @description Creates Laffer curves. The function allows specifying a custom Laffer curve, modifying the maximum X and Y axis values, creating intersections along the values of the Y-axis and the curve and customizing the final output with other arguments.
 #'
 #' @param curve Specify a custom curve (as `data.frame`). This will override the sample curve.
 #' @param t Y-axis values where to create intersections with the Laffer curve.
@@ -136,11 +136,4 @@ laffer <- function(curve, t, xmax, ymax, pointcol = 1, generic = TRUE, showmax =
   }
 
 }
-
-# Ejemplo
-# laffer(ylab = "T", xlab = "t", acol = "lightblue", pointcol = 4, generic = T)
-
-
-
-
 

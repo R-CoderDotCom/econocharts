@@ -283,25 +283,3 @@ indifference <- function(...,
     return(list(p = p, curve = curve))
   }
 }
-
-
-# Example
-
-# indifference(data.frame(x = 1:3, y = 3:1), list(x = 1:3, y = 3:1))
-#
-# indifference(ncurves = 2, type = "psubs", x = c(2, 4), main = "Indifference curves", xlab = "Good X", ylab = "Good Y", bg.col = "#fff3cd", linecol = 1, pointcol = 2)
-#
-# p <- indifference(ncurves = 2, x = c(2, 4), main = "indifference curves", xlab = "Good X", ylab = "Good Y")
-#
-# int <- bind_rows(curve_intersect(data.frame(x = 1:1000, y = rep(3, nrow(p$curve))), p$curve + 1))
-#
-# p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dotted")  +
-#   geom_segment(data = int,
-#                aes(x = x, y = 0, xend = x, yend = y), lty = "dotted") +
-#   geom_point(data = int, size = 3)
-
-
-
-
-
-

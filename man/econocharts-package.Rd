@@ -3,9 +3,9 @@
 \docType{package}
 \name{econocharts-package}
 \alias{econocharts-package}
-\title{econocharts: Microeconomic Made with 'ggplot2'}
+\title{econocharts: Microeconomics and Macroeconomics charts Made with 'ggplot2'}
 \description{
-This package creates...
+This package allows creating microeconomics and macroeconomics charts, like supply and demand curves, production-possibility frontiers, indifference curves, Laffer curves or customized charts with very simple functions.
 }
 \details{
 \itemize{

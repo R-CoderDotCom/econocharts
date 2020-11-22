@@ -19,7 +19,9 @@ curve_intersect(curve1, curve2, empirical = TRUE, domain = NULL)
 A list with \code{x} and \code{y} values.
 }
 \description{
-TODO
+Calculate where two lines or curves intersect. Curves are defined as data
+frames with x and y columns providing cartesian coordinates for the lines.
+This function works on both linear and nonlinear curves.
 }
 \details{
 For now, \code{curve_intersect} will only find one intersection.
