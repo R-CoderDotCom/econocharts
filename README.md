@@ -24,6 +24,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Indifference curves](#indifference-curves)
 - [Production–possibility frontier](#productionpossibility-frontier)
 - [Laffer curve](#laffer-curve)
+- [Calculating the intersections](#Intersections)
 
 ## Installation
 
@@ -280,3 +281,65 @@ laffer(xmax = 20, # Modify the curve
 <p align="center">
  <img src="https://user-images.githubusercontent.com/67192157/99190101-f379f100-2764-11eb-9c17-1673f2d93543.png">
 </p>
+
+
+
+## Intersections
+
+The functions above can have a limited functionality if you want a fully customized plot. The `curve_intersection` function allows you to calculate the intersection points between two curves. You can use this function to create your custom charts.
+
+Credits to [Andrew Heiss](https://www.andrewheiss.com/) for this function and examples.
+
+
+### Curved Bézier lines with empirical data
+
+```r
+# Curves
+curve1 <- data.frame(Hmisc::bezier(c(1, 8, 9), c(1, 5, 9)))
+curve2 <- data.frame(Hmisc::bezier(c(1, 3, 9), c(9, 3, 1)))
+
+# Calculate the intersections
+curve_intersection <- curve_intersect(curve1, curve2)
+
+# Create the chart
+ggplot(mapping = aes(x = x, y = y)) +
+  geom_line(data = curve1, color = "red", size = 1) +
+  geom_line(data = curve2, color = "blue", size = 1) +
+  geom_vline(xintercept = curve_intersection$x, linetype = "dotted") +
+  geom_hline(yintercept = curve_intersection$y, linetype = "dotted") +
+  theme_classic()
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/100347242-5bda9500-2fe5-11eb-9e29-03904eb16a8d.png">
+</p>
+
+
+### Curved lines defined with functions
+
+Specify a X-axis range and set `empirical = FALSE`.
+
+```r
+# Define curves with functions
+curve1 <- function(q) (q - 10)^2
+curve2 <- function(q) q^2 + 2*q + 8
+
+# X-axis range
+x_range <- 0:5
+
+# Calculate the intersections between the two curves
+curve_intersection <- curve_intersect(curve1, curve2, empirical = FALSE, 
+                                      domain = c(min(x_range), max(x_range)))
+
+# Create your custom plot
+ggplot(data.frame(x = x_range)) +
+  stat_function(aes(x = x), color = "blue", size = 1, fun = curve1) +
+  stat_function(aes(x = x), color = "red", size = 1, fun = curve2) +
+  geom_vline(xintercept = curve_intersection$x, linetype = "dotted") +
+  geom_hline(yintercept = curve_intersection$y, linetype = "dotted") +
+  theme_classic()
+```
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/100347242-5bda9500-2fe5-11eb-9e29-03904eb16a8d.png">
+</p>
+
