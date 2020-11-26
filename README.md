@@ -11,7 +11,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [ ] Allow drawing custom functions
 - [ ] Add graph for budget constraints
 - [ ] Fix `linecol` argument
-- [ ] Tax graph
+- [x] Tax graph
 - [ ] Shade producer and consumer surplus
 - [ ] Add Edgeworth box
 
