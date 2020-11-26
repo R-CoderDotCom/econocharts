@@ -72,16 +72,16 @@ demand <- function(...,
     }
 
     if(type == "convex") {
-      # Example indifference curve
+      # Sample indifference curve
       curve <- data.frame(Hmisc::bezier(c(1, 3, xmax),
-                             c(ymax, 3, 1)))
+                                        c(ymax, 3, 1)))
 
       m <- TRUE
     }
 
     if(type == "line") {
-      curve <- data.frame(x = c(xmax, 0.9),
-                          y = c(0.9, ymax))
+      curve <- data.frame(x = c(0.9, xmax),
+                          y = c(ymax, 0.9))
       m <- TRUE
     }
   } else{
