@@ -253,6 +253,33 @@ p$p + geom_point(data = data.frame(x = 5, y = 5), size = 3) +
  <img src="https://user-images.githubusercontent.com/67192157/99190004-751d4f00-2764-11eb-85f1-d198e97bcdb0.png">
 </p>
 
+## Tax graph
+
+Original function by Andrew Heiss.
+
+``` r
+# Data
+demand <- function(Q) 20 - 0.5 * Q
+supply <- function(Q) 2 + 0.25 * Q
+supply_tax <- function(Q) supply(Q) + 5
+
+# Chart
+tax_graph(demand, supply, supply_tax, NULL)
+```
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/100352541-6c8f0900-2fed-11eb-90ae-e44cc2e44083.png">
+</p>
+
+``` r
+# Chart with shaded areas
+tax_graph(demand, supply, supply_tax, shaded = TRUE)
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/100351250-71eb5400-2feb-11eb-87d1-dae3705b5ff0.png">
+</p>
+
+
 
 ## Laffer curve
 ```r
