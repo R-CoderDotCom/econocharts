@@ -23,6 +23,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Supply and demand](#supply-and-demand)
 - [Indifference curves](#indifference-curves)
 - [Production–possibility frontier](#productionpossibility-frontier)
+- [Tax graph](#tax-graph)
 - [Laffer curve](#laffer-curve)
 - [Calculating the intersections](#Intersections)
 
