@@ -81,7 +81,7 @@ demand <- function(...,
 
     if(type == "line") {
       curve <- data.frame(x = c(xmax, 0.9),
-                          y = c(ymax, 0.9))
+                          y = c(0.9, ymax))
       m <- TRUE
     }
   } else{
@@ -302,3 +302,4 @@ demand <- function(...,
     return(list(p = p, curve = curve))
   }
 }
+
