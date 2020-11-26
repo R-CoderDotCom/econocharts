@@ -3,8 +3,6 @@
 #' @description Create supply and demand curves. By default, the function will use a default supply and a default demand curve, but this can be overridden passing new curves as additional arguments or modifying the `xmax` and `ymax` arguments.
 #' Moreover, the function provides several arguments to customize the final output, like displaying the equilibrium points, the name of the curves, customizing the title, subtitle or axis labels, among others.
 #'
-#'
-#'
 #' @param ... Specify the demand and supply curve or curves separated by commas (as `data.frame`) you want to display in the graph, starting with supply. This will override the sample curves.
 #' @param xmax Numeric. Allows modifying the maximum X value for the default functions.
 #' @param ymax Numeric. Allows modifying the maximum Y value for the default functions.
@@ -23,8 +21,7 @@
 #'
 #'
 #' @examples
-#'
-#'
+#' #TODO
 #'
 #'
 #' @import ggplot2 dplyr

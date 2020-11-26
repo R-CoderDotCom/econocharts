@@ -58,8 +58,7 @@ Create supply and demand curves. By default, the function will use a default sup
 Moreover, the function provides several arguments to customize the final output, like displaying the equilibrium points, the name of the curves, customizing the title, subtitle or axis labels, among others.
 }
 \examples{
-
-
+#TODO
 
 
 }
