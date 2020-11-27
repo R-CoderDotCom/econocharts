@@ -371,3 +371,6 @@ ggplot(data.frame(x = x_range)) +
  <img src="https://user-images.githubusercontent.com/67192157/100347242-5bda9500-2fe5-11eb-9e29-03904eb16a8d.png">
 </p>
 
+## Social Media
+- Facebook: [https://www.facebook.com/RCODERweb](https://www.facebook.com/RCODERweb)
+- Twitter: [https://twitter.com/RCoderWeb](https://twitter.com/RCoderWeb)
