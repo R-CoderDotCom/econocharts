@@ -1,4 +1,4 @@
-# econocharts
+# econocharts package<img width = 150px height = 150px src="https://user-images.githubusercontent.com/67192157/100551203-792a9000-327f-11eb-8be0-48046a61c0e5.png" align="right" />
 Microeconomics/macroeconomics graphs made with ggplot2
 
 This package allows creating microeconomics or macroeconomics charts in R with simple functions. This package inspiration is [reconPlots](https://github.com/andrewheiss/reconPlots) by Andrew Heiss.
