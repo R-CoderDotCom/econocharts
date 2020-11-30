@@ -190,8 +190,7 @@ indifference(ncurves = 2,    # Two curves
              xlab = "Good X",
              ylab = "Good Y",
              bg.col = "#fff3cd", # Background color
-             linecol = 1,  # Color of the curve
-             pointcol = 2) # Color of the intersection points
+             linecol = 1)  # Color of the curve
 ```
 
 <p align="center">
