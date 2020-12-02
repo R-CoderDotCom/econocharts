@@ -15,6 +15,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [ ] Shade producer and consumer surplus
 - [ ] Add Edgeworth box
 - [ ] General equilibrium (suggested by Ilya)
+- [ ] Prospect theory charts (suggested by @brshallo)
 
 
 ## Index
