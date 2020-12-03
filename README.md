@@ -29,6 +29,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Prospect Theory value function](#prospect-theory-value-function)
 - [Laffer curve](#laffer-curve)
 - [Calculating the intersections](#Intersections)
+- [Citation](#citation)
 
 ## Installation
 
@@ -389,6 +390,26 @@ ggplot(data.frame(x = x_range)) +
 <p align="center">
  <img src="https://user-images.githubusercontent.com/67192157/100347242-5bda9500-2fe5-11eb-9e29-03904eb16a8d.png">
 </p>
+
+## Citation
+
+```r
+To cite package ‘econocharts’ in publications use:
+
+  José Carlos Soage González and Andrew Heiss (2020). econocharts: Microeconomics and Macroeconomics Charts Made with 'ggplot2'. https://r-coder.com/,
+  https://r-coder.com/economics-charts-r/.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {econocharts: Microeconomics and Macroeconomics Charts Made with 'ggplot2'},
+    author = {José Carlos {Soage González} and Andrew Heiss},
+    year = {2020},
+    note = {R package version 1.0},
+    url = {https://r-coder.com/, https://r-coder.com/economics-charts-r/},
+  }
+
+```
 
 ## Social Media
 - Facebook: [https://www.facebook.com/RCODERweb](https://www.facebook.com/RCODERweb)
