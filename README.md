@@ -15,7 +15,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [ ] Shade producer and consumer surplus
 - [ ] Add Edgeworth box
 - [ ] General equilibrium (suggested by Ilya)
-- [ ] Prospect theory charts (suggested by @brshallo)
+- [x] Prospect theory value function (suggested by @brshallo)
 
 
 ## Index
@@ -26,6 +26,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Indifference curves](#indifference-curves)
 - [Production–possibility frontier](#productionpossibility-frontier)
 - [Tax graph](#tax-graph)
+- [Prospect Theory value function](#prospect-theory-value-function)
 - [Laffer curve](#laffer-curve)
 - [Calculating the intersections](#Intersections)
 
@@ -279,6 +280,23 @@ tax_graph(demand, supply, supply_tax, shaded = TRUE)
 
 <p align="center">
  <img src="https://user-images.githubusercontent.com/67192157/100351250-71eb5400-2feb-11eb-87d1-dae3705b5ff0.png">
+</p>
+
+## Prospect theory value function
+
+```r
+ptvalue(col = 2,                  # Color of the curve
+        xint = seq(0, 75, 25),    # Intersections
+        xintcol = 4,              # Color of the intersection segments
+        ticks = TRUE,             # Display ticks on the axes
+        xlabels = TRUE,           # Display the X-axis tick labels
+        ylabels = TRUE,           # Display the Y-axis tick labels
+        by_x = 25, by_y = 50,     # Axis steps
+        main = "Prospect Theory Value Function")
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/101017726-c4d48680-356a-11eb-9bd6-e62854814143.png">
 </p>
 
 
