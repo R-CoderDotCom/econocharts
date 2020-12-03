@@ -396,8 +396,8 @@ ggplot(data.frame(x = x_range)) +
 ```r
 To cite package ‘econocharts’ in publications use:
 
-  José Carlos Soage González and Andrew Heiss (2020). econocharts: Microeconomics and Macroeconomics Charts Made with 'ggplot2'. https://r-coder.com/,
-  https://r-coder.com/economics-charts-r/.
+  José Carlos Soage González and Andrew Heiss (2020). econocharts: Microeconomics and Macroeconomics Charts Made with 'ggplot2'. R package version 1.0.
+  https://r-coder.com/, https://r-coder.com/economics-charts-r/.
 
 A BibTeX entry for LaTeX users is
 
