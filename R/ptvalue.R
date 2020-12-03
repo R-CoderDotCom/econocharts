@@ -146,8 +146,3 @@ ptvalue <- function(x, sigma = 0.88, lambda = -2.25, xint, xintcol = 1,
 
 }
 
-
-
-ptvalue(col = 2, xint = seq(10, 80, 10), xintcol = 4,
-        main = "Prospect Theory Value Function")
-
