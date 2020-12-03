@@ -17,7 +17,8 @@ tax_graph(
   shaded = FALSE,
   xlim = c(0, 45),
   ylim = c(0, 20),
-  max_x = 45
+  max_x = 45,
+  bg.col = "white"
 )
 }
 \arguments{
@@ -44,6 +45,8 @@ tax_graph(
 \item{ylim}{TODO}
 
 \item{max_x}{TODO}
+
+\item{bg.col}{TODO}
 }
 \description{
 TODO
@@ -67,7 +70,7 @@ supply_inelastic <- function(Q) 2 + 1.5 * Q
 supply_inelastic_tax <- function(Q) supply_inelastic(Q) + 5
 
 normal_taxes <- tax_graph(demand, supply, supply_tax, NULL)
-normal_taxes_shaded <- tax_graph(demand, supply, supply_tax, NULL, shaded = TRUE)
+normal_taxes_shaded <- tax_graph(demand, supply, supply_tax, shaded = TRUE)
 normal_taxes_shaded$p
 
 }

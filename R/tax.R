@@ -14,6 +14,7 @@
 #' @param xlim TODO
 #' @param ylim TODO
 #' @param max_x TODO
+#' @param bg.col TODO
 #'
 #' @author
 #' \itemize{
@@ -39,7 +40,7 @@
 #' supply_inelastic_tax <- function(Q) supply_inelastic(Q) + 5
 #'
 #' normal_taxes <- tax_graph(demand, supply, supply_tax, NULL)
-#' normal_taxes_shaded <- tax_graph(demand, supply, supply_tax, NULL, shaded = TRUE)
+#' normal_taxes_shaded <- tax_graph(demand, supply, supply_tax, shaded = TRUE)
 #' normal_taxes_shaded$p
 #'
 #' @import ggplot2 dplyr
@@ -47,7 +48,7 @@
 tax_graph <- function(demand_fun, supply_fun, supply_tax, names = c("Consumer surplus", "Producer surplus", "DWL", "Consumer tax burden", "Producer tax burden"),
                       title = NULL, xlab = "Product (Q)",
                       ylab = "Price (P)", colors, shaded = FALSE, xlim = c(0, 45),
-                      ylim = c(0, 20), max_x = 45) {
+                      ylim = c(0, 20), max_x = 45, bg.col = "white") {
 
   if(missing(colors)) {
     # Aurora and Frost color palettes from Nord
@@ -230,7 +231,9 @@ tax_graph <- function(demand_fun, supply_fun, supply_tax, names = c("Consumer su
     coord_cartesian(xlim, ylim) +
     labs(x = xlab, y = ylab, title = title) +
     theme_econ(13, axis_line = TRUE) +
-    theme(panel.grid = element_blank())
+    theme(panel.grid = element_blank(),
+          plot.background = element_rect(fill = bg.col),
+          plot.margin = margin(0.5, 1, 0.5, 0.5, "cm"))
 
   if (shaded) {
     final_plot <- full_plot +
