@@ -16,6 +16,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [ ] Add Edgeworth box
 - [ ] General equilibrium (suggested by Ilya)
 - [x] Prospect theory value function (suggested by @brshallo)
+- [ ] Neoclassical labor supply (suggested by @hilton1)
 
 
 ## Index
