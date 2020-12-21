@@ -8,7 +8,7 @@ Description: Contains several functions for creating fully-customizable microeco
 Imports: ggplot2, dplyr, Hmisc, scales, glue
 License: MIT + file LICENSE
 Encoding: UTF-8
-URL: https://r-coder.com/
+URL: https://r-coder.com/, https://r-coder.com/economics-charts-r/
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

@@ -98,3 +98,23 @@ curve_intersect <- function(curve1, curve2, empirical = TRUE, domain = NULL) {
 # AF2(5)
 
 
+# line <- data.frame(x = 0:10, y = rep(3, 11))
+# lines(line)
+# curve_intersect(line, curve)
+#
+#
+#
+# curve <- data.frame(Hmisc::bezier(c(1, 9, 2),
+#                                   c(1, 5, 9)))
+# line <- data.frame(x = 0:10, y = rep(3, 11))
+#
+# plot(curve$x, curve$y, type = "l")
+# lines(line)
+#
+#
+# int <- curve_intersect(curve, line)
+# abline(v = int$x)
+#
+# ggplot(curve, aes(x = x, y = y)) +
+#   geom_line() +
+#   geom_path()
