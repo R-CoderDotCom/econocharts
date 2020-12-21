@@ -16,7 +16,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [ ] Add Edgeworth box
 - [ ] General equilibrium (suggested by Ilya)
 - [x] Prospect theory value function (suggested by @brshallo)
-- [ ] Neoclassical labor supply (suggested by @hilton1)
+- [x] Neoclassical labor supply (suggested by @hilton1)
 
 
 ## Index
@@ -24,6 +24,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Supply curve](#supply)
 - [Demand curve](#demand)
 - [Supply and demand](#supply-and-demand)
+- [Neoclassical labor supply](#neoclassical-labor-supply)
 - [Indifference curves](#indifference-curves)
 - [Production–possibility frontier](#productionpossibility-frontier)
 - [Tax graph](#tax-graph)
@@ -145,6 +146,15 @@ p + annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,                # A
  <img src="https://user-images.githubusercontent.com/67192157/99189792-536f9800-2763-11eb-8848-0149b743e209.png">
 </p>
 
+## Neoclassical labor supply
+
+```r
+neolabsup(x = c(2, 3, 5, 7), xlab = "Quantity of\n labor supplied", ylab = "Wage rate")
+```
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67192157/102769600-2c6c3d80-4383-11eb-84b8-aca39c86ac62.png">
+</p>
 
 ## Indifference curves
 
