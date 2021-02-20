@@ -3,7 +3,7 @@ Microeconomics/macroeconomics graphs made with ggplot2
 
 This package allows creating microeconomics or macroeconomics charts in R with simple functions. This package inspiration is [reconPlots](https://github.com/andrewheiss/reconPlots) by Andrew Heiss.
 
-THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas by submitting an Issue
+THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas by submitting an Issue or contributing submitting Pull Requests.
 
 ## TODO
 - [ ] Finish documentation
@@ -30,7 +30,7 @@ THE PACKAGE IS UNDER HEAVY DEVELOPMENT. WORK IN PROGRESS. You can suggest ideas 
 - [Tax graph](#tax-graph)
 - [Prospect Theory value function](#prospect-theory-value-function)
 - [Laffer curve](#laffer-curve)
-- [Calculating the intersections](#Intersections)
+- [Calculating the intersections](#intersections)
 - [Citation](#citation)
 
 ## Installation
