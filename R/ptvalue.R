@@ -1,46 +1,65 @@
 
 #' @title Value function in Prospect Theory
 #'
-#' @description TODO
+#' @description Produces assymetric S-shaped value function according to lessons
+#'   from Prospect Theory that losses are felt more intensely than gains.
 #'
-#' @param x TODO
-#' @param sigma TODO
-#' @param lambda TODO
-#' @param xint TODO
-#' @param xintcol TODO
-#' @param main TODO
-#' @param sub TODO
-#' @param xlab TODO
-#' @param ylab TODO
-#' @param col TODO
-#' @param bg.col TODO
+#' @param x Numeric. Vector of gain / loss values for x.
+#' @param sigma Number. Exponent of functions, should be less than 1 to make an
+#'   'S' shaped curve.
+#' @param lambda Numer. Extent of assymetry between losses and gains. Should be
+#'   less than -1 for losses to be more 'intense' than gains (as suggested by
+#'   Prospect Theory). Between -1 and 0 for gains to be more intense than
+#'   losses. Greater than 0 for losses to have positive value.
+#' @param xint Numeric. Symmetric intersections. X-intercept values where to
+#'   highlight points -- will be placed at both `xint` and `abs(xint)` to
+#'   demonstrate assymetry in `value`.
+#' @param xintcol Color of dashed lines calling-out `xint`.
+#' @param main Main title of the plot.
+#' @param sub Subtitle of the plot.
+#' @param xlab Name of the X-axis.
+#' @param ylab Name of the Y-axis.
+#' @param col Color of function segment.
+#' @param bg.col Background color.
 #' @param ticks TOOD
-#' @param xlabels TODO
-#' @param ylabels TODO
-#' @param by_x TODO
-#' @param by_y TODO
+#' @param xlabels TRUE / FALSE :  whether x labels are included.
+#' @param ylabels TRUE / FALSE :  whether y labels are included.
+#' @param by_x Number. Increment of the x-axis labels.
+#' @param by_y Number. Increment of the x-axis labels.
 #'
 #' @details TODO
 #'
 #' @importFrom stats approxfun
-#'
+#' @references Tversky, Amos; Kahneman, Daniel (1992). "Advances in prospect
+#'   theory: Cumulative representation of uncertainty". Journal of Risk and
+#'   Uncertainty. 5 (4): 297–323.
 #' @examples
 #'
-#' # Sigma
-#' sigma <- 0.25
-#'
-#' # Symmetric intersections
-#' xint <- seq(10, 80, 10)
-#' ptvalue(sigma = sigma, col = 1, xint = xint, xintcol = 4)
+#' ptvalue(
+#'   sigma = 0.25,
+#'   xint = 20,
+#'   xintcol = 'blue',
+#'   main = "Prospect Theory Shows That Gains & Losses are Felt Assymetrically",
+#'   sub = "Losses are More Intense"
+#' )
 #'
 #' @export
-ptvalue <- function(x, sigma = 0.88, lambda = -2.25, xint, xintcol = 1,
-                    main = NULL, sub = NULL, xlab = "Loss", ylab = "Value",
+ptvalue <- function(x, sigma = 0.30, lambda = -2.25, xint, xintcol = 1,
+                    main = NULL, sub = NULL, xlab = "Loss / Gain", ylab = "Value",
                     col = 1, bg.col = "white", ticks = TRUE,
                     xlabels =  TRUE, ylabels = TRUE, by_x = 10, by_y = 20){
 
+  if(sigma >= 1) warning("sigma should be less than 1 to produce an 'S' shaped curve.")
+  if(lambda >= -1) warmomg("lambda should be less than -1 in order that losses be represented as more intense than gains.")
+  
   if(missing(x)) {
-    x <- seq(-100, 100, 0.1)
+
+    x_pos <- seq(from = log(1), to = log(101), length.out = 1000) %>% 
+      exp() %>% 
+      {. - 1}
+    
+    x <- c(sort(-x_pos), 0, x_pos)
+    
   }
 
   # Tversky & Kahneman, 1992
@@ -107,7 +126,7 @@ ptvalue <- function(x, sigma = 0.88, lambda = -2.25, xint, xintcol = 1,
     p <- p + geom_text(data = tick_frame_y,  aes(x = zero, y = ticks, label = round(ticks, 2)), hjust = 1.25)
   }
 
-  p <- p + stat_function(fun = value, size = 1, color = col)
+  p <- p + geom_line(aes(x = x, y = value(x)))
 
   if(!missing(xint)) {
 
