@@ -297,8 +297,8 @@ tax_graph(demand, supply, supply_tax, shaded = TRUE)
 ## Prospect theory value function
 
 ```r
-ptvalue(sigma = 0.88,             # From Tversky & Kahneman, 1992
-        lambda = -2.25,           # From Tversky & Kahneman, 1992
+ptvalue(sigma = 0.3,             
+        lambda = -2.25,          
         col = 2,                  # Color of the curve
         xint = seq(0, 75, 25),    # Intersections
         xintcol = 4,              # Color of the intersection segments
@@ -310,7 +310,7 @@ ptvalue(sigma = 0.88,             # From Tversky & Kahneman, 1992
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/101017726-c4d48680-356a-11eb-9bd6-e62854814143.png">
+ <img src="https://user-images.githubusercontent.com/67192157/115458243-c48d0d00-a225-11eb-8066-56d04eeb951d.png">
 </p>
 
 
