@@ -126,7 +126,7 @@ ptvalue <- function(x, sigma = 0.30, lambda = -2.25, xint, xintcol = 1,
     p <- p + geom_text(data = tick_frame_y,  aes(x = zero, y = ticks, label = round(ticks, 2)), hjust = 1.25)
   }
 
-  p <- p + geom_line(aes(x = x, y = value(x)))
+  p <- p + geom_line(aes(x = x, y = value(x)), col = col)
 
   if(!missing(xint)) {
 
