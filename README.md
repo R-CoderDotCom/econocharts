@@ -310,7 +310,7 @@ ptvalue(sigma = 0.3,
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/115458243-c48d0d00-a225-11eb-8066-56d04eeb951d.png">
+ <img src="https://user-images.githubusercontent.com/67192157/115458751-6ad91280-a226-11eb-8258-f891bb989955.png">
 </p>
 
 
