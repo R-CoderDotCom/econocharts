@@ -1,19 +1,19 @@
 
 #' @title Value function in Prospect Theory
 #'
-#' @description Produces assymetric S-shaped value function according to lessons
+#' @description Produces asymmetric S-shaped value function according to lessons
 #'   from Prospect Theory that losses are felt more intensely than gains.
 #'
 #' @param x Numeric. Vector of gain / loss values for x.
 #' @param sigma Number. Exponent of functions, should be less than 1 to make an
 #'   'S' shaped curve.
-#' @param lambda Numer. Extent of assymetry between losses and gains. Should be
+#' @param lambda Number. Extent of asymmetry between losses and gains. Should be
 #'   less than -1 for losses to be more 'intense' than gains (as suggested by
 #'   Prospect Theory). Between -1 and 0 for gains to be more intense than
 #'   losses. Greater than 0 for losses to have positive value.
 #' @param xint Numeric. Symmetric intersections. X-intercept values where to
 #'   highlight points -- will be placed at both `xint` and `abs(xint)` to
-#'   demonstrate assymetry in `value`.
+#'   demonstrate asymmetry in `value`.
 #' @param xintcol Color of dashed lines calling-out `xint`.
 #' @param main Main title of the plot.
 #' @param sub Subtitle of the plot.
@@ -167,7 +167,7 @@ ptvalue <- function(x, sigma = 0.30, lambda = -2.25, xint, xintcol = 1,
 
 
 
-ptvalue(col = 2, xint = seq(0, 100, 25), xintcol = 4,
-        by_x = 25, by_y = 50,
-        main = "Prospect Theory Value Function")
+# ptvalue(col = 2, xint = seq(0, 100, 25), xintcol = 4,
+#         by_x = 25, by_y = 50,
+#         main = "Prospect Theory Value Function")
 
