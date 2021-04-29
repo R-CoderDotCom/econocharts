@@ -50,7 +50,7 @@ ptvalue <- function(x, sigma = 0.30, lambda = -2.25, xint, xintcol = 1,
                     xlabels =  TRUE, ylabels = TRUE, by_x = 10, by_y = 20){
 
   if(sigma >= 1) warning("sigma should be less than 1 to produce an 'S' shaped curve.")
-  if(lambda >= -1) warmomg("lambda should be less than -1 in order that losses be represented as more intense than gains.")
+  if(lambda >= -1) warning("lambda should be less than -1 in order that losses be represented as more intense than gains.")
   
   if(missing(x)) {
 
