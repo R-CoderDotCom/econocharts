@@ -6,13 +6,13 @@
 \usage{
 ptvalue(
   x,
-  sigma = 0.88,
+  sigma = 0.3,
   lambda = -2.25,
   xint,
   xintcol = 1,
   main = NULL,
   sub = NULL,
-  xlab = "Loss",
+  xlab = "Loss / Gain",
   ylab = "Value",
   col = 1,
   bg.col = "white",
@@ -24,51 +24,64 @@ ptvalue(
 )
 }
 \arguments{
-\item{x}{TODO}
+\item{x}{Numeric. Vector of gain / loss values for x.}
 
-\item{sigma}{TODO}
+\item{sigma}{Number. Exponent of functions, should be less than 1 to make an
+'S' shaped curve.}
 
-\item{lambda}{TODO}
+\item{lambda}{Number. Extent of asymmetry between losses and gains. Should be
+less than -1 for losses to be more 'intense' than gains (as suggested by
+Prospect Theory). Between -1 and 0 for gains to be more intense than
+losses. Greater than 0 for losses to have positive value.}
 
-\item{xint}{TODO}
+\item{xint}{Numeric. Symmetric intersections. X-intercept values where to
+highlight points -- will be placed at both \code{xint} and \code{abs(xint)} to
+demonstrate asymmetry in \code{value}.}
 
-\item{xintcol}{TODO}
+\item{xintcol}{Color of dashed lines calling-out \code{xint}.}
 
-\item{main}{TODO}
+\item{main}{Main title of the plot.}
 
-\item{sub}{TODO}
+\item{sub}{Subtitle of the plot.}
 
-\item{xlab}{TODO}
+\item{xlab}{Name of the X-axis.}
 
-\item{ylab}{TODO}
+\item{ylab}{Name of the Y-axis.}
 
-\item{col}{TODO}
+\item{col}{Color of function segment.}
 
-\item{bg.col}{TODO}
+\item{bg.col}{Background color.}
 
 \item{ticks}{TOOD}
 
-\item{xlabels}{TODO}
+\item{xlabels}{TRUE / FALSE :  whether x labels are included.}
 
-\item{ylabels}{TODO}
+\item{ylabels}{TRUE / FALSE :  whether y labels are included.}
 
-\item{by_x}{TODO}
+\item{by_x}{Number. Increment of the x-axis labels.}
 
-\item{by_y}{TODO}
+\item{by_y}{Number. Increment of the x-axis labels.}
 }
 \description{
-TODO
+Produces asymmetric S-shaped value function according to lessons
+from Prospect Theory that losses are felt more intensely than gains.
 }
 \details{
 TODO
 }
 \examples{
 
-# Sigma
-sigma <- 0.25
+ptvalue(
+  sigma = 0.25,
+  xint = 20,
+  xintcol = 'blue',
+  main = "Prospect Theory Shows That Gains & Losses are Felt Assymetrically",
+  sub = "Losses are More Intense"
+)
 
-# Symmetric intersections
-xint <- seq(10, 80, 10)
-ptvalue(sigma = sigma, col = 1, xint = xint, xintcol = 4)
-
+}
+\references{
+Tversky, Amos; Kahneman, Daniel (1992). "Advances in prospect
+theory: Cumulative representation of uncertainty". Journal of Risk and
+Uncertainty. 5 (4): 297–323.
 }
