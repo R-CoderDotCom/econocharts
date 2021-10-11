@@ -21,7 +21,28 @@
 #'
 #'
 #' @examples
-#' #TODO
+#' sdcurve() # Default supply and demand plot
+# Custom data
+#' supply1 <- data.frame(x = c(1, 9), y = c(1, 9))
+#' supply1
+#' 
+#' demand1 <- data.frame(x = c(7, 2), y = c(2, 7))
+#' demand1
+#' 
+#' supply2 <- data.frame(x = c(2, 10), y = c(1, 9))
+#' supply2
+#' 
+#' demand2 <- data.frame(x = c(8, 2), y = c(2, 8))
+#' demand2
+#' 
+#' p <- sdcurve(supply1,   # Custom data
+#'              demand1,
+#'              supply2, 
+#'              demand2,
+#'              equilibrium = TRUE, # Calculate the equilibrium
+#'              bg.col = "#fff3cd") # Background color
+#' p + annotate("segment", x = 2.5, xend = 3, y = 6.5, yend = 7,                # Add more layers
+#'              arrow = arrow(length = unit(0.3, "lines")), colour = "grey50")
 #'
 #'
 #' @import ggplot2 dplyr
